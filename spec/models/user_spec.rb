@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     @user = User.new(
       name: 'Theresa',
       photo: 'https://github.com/Theresa/Blog-app',
-      bio: 'Art is beauty',
+      bio: 'Perfect gaze',
       posts_counter: 0
     )
   end
