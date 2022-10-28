@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   has_many :comment
   belongs_to :post
 
-  after_save :update_comment_counter
+  # after_save :update_comment_counter
 
   def updates_comment_counter
     post.increment!(:comments_counter)
