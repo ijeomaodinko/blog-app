@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before(:all) do
     @user = User.new(
-      name: 'Eternalgratis',
-      photo: 'https://github.com/Eternalgratis/Blog-app',
-      bio: 'I am wonderfully made',
+      name: 'Theresa',
+      photo: 'https://github.com/Theresa/Blog-app',
+      bio: 'Art is beauty',
       posts_counter: 0
     )
   end

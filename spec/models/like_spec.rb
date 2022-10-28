@@ -3,12 +3,11 @@ require 'rails_helper'
 RSpec.describe Like, type: :model do
   before(:all) do
     @user = User.create(
-        name: 'Theresa',
-        photo: 'https://github.com/trickphotos/Blog-app',
-        bio: 'Perfect gaze',
-        posts_counter: 1
+      name: 'Theresa',
+      photo: 'https://github.com/Theresa/Blog-app',
+      bio: 'Perfect gaze',
+      posts_counter: 1
     )
-
     @post = Post.create(
       author_id: @user.id
     )

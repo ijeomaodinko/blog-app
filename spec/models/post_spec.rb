@@ -28,12 +28,12 @@ RSpec.describe User, type: :model do
   end
 
   it 'comments_counter must have an integer greater_than_or_equal_to 0' do
-    @post.comments_counter = '0'
+    @post.comments_counter = 5
     expect(@post).to be_valid
   end
 
   it 'likes_counter must be an integer greater_than_or_equal_to 0' do
-    @post.likes_counter = 10
+    @post.likes_counter = 1
     expect(@post).to be_valid
   end
 end
