@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  
   describe 'GET /index' do
-    
     before(:all) do
       @address = get '/post/index'
     end
@@ -12,7 +10,7 @@ RSpec.describe 'Posts', type: :request do
       get '/post/index'
       expect(response).to have_http_status(:success)
     end
-    
+
     it 'returns a valid status' do
       expect(@address).to eq(200)
     end
@@ -23,7 +21,6 @@ RSpec.describe 'Posts', type: :request do
     it 'Response body should return correct placeholder text' do
       expect(response.body).to include 'Here is the list of all the post'
     end
-
   end
 
   describe 'GET /show' do
@@ -45,6 +42,5 @@ RSpec.describe 'Posts', type: :request do
     it 'matches the placeholder text with the response body' do
       expect(response.body).to include 'Here is the list of all the post'
     end
-
   end
 end
