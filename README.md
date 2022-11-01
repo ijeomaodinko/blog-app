@@ -5,7 +5,7 @@
 This project - Blog app is built using ruby on rails. The Blog app is a classic example of a blog website. The project is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 
-## Built With
+## Built With 🛠
 
 - Ruby on Rails
 
@@ -44,7 +44,7 @@ Press ENTER to create your local clone. After creating it, you can open the page
     rails s 
 
 
-## Author
+## Author 🖊📖
 
 👤 **Ijeoma Odinko**
 
