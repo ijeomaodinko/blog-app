@@ -1,9 +1,9 @@
   <h1>Here are list of users</h1>
     <p>Users</p>
     <section>
-    <% @users.each do |user|  %>
+    <% @users.each do |user| %>
     <div>
-    Photo: <%= user.photo %></br>
+    <img class="user-image" src="<%= user.photo %>" alt="user photo">
     </div>
     <div>
      <h2><%= user.name %></h1>
