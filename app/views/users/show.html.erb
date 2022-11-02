@@ -1,29 +1,29 @@
-<section>
-<div>
+<section class="user-info">
+<div class="image-info">
 <img class="user-image" src="<%= @user.photo %>" alt="user photo">
 </div>
-<div>
+<div class="user">
  <h2><%= @user.name %></h1>
  <h3>Number of posts: <%= @user.posts_counter %></h3>
  </div>
 </section>
 
-<section>
-<div>
+<section class="bio-info">
+<div class="bio">
  Bio: <%= @user.bio %>
 </div>
 </section>
 
-<section>
+<section class="post-info">
 <% @user.most_recent_post.each do |post|%>
     <%= link_to user_post_path(@user.id, post.id) do %>
-    <div>
+    <div class="post">
    <h2>Post: <%= '#' %> <%= post.id %></h2>
     <h3><%= post.title%></h3>
     <p> <%= post.text%> </p>
     <div>
     <p>Comments: <%= post.comments_counter%>
-    <span>Likes: <%= post.likes_counter %></span></p>
+    <span class="like-info">Likes: <%= post.likes_counter %></span></p>
     </div>
     </section>
 <% end %>
