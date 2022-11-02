@@ -1,3 +1,12 @@
 <h1>Here is list of all the users</h1>
-
+<% @users.each do |e|  %>
+    <section>
+    <h5>User <%= e.id %></h5>
+    <p>
+     Name: <%= e.name %></br>
+     Photo: <%= e.photo %></br>
+     Bio: <%= e.bio %></br>
+    </p>
+    </section>
+<% end %>
 
