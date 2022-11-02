@@ -1,12 +1,14 @@
-<h1>Here is list of all the users</h1>
-<% @users.each do |e|  %>
+  <h1>Here are list of users</h1>
+    <p>Users</p>
     <section>
-    <h5>User <%= e.id %></h5>
-    <p>
-     Name: <%= e.name %></br>
-     Photo: <%= e.photo %></br>
-     Bio: <%= e.bio %></br>
-    </p>
+    <% @users.each do |user|  %>
+    <div>
+    Photo: <%= user.photo %></br>
+    </div>
+    <div>
+     <h2><%= user.name %></h1>
+     <h3>Number of posts: <%= user.posts_counter %></h3>
+     </div>
+     <% end %>
     </section>
-<% end %>
 

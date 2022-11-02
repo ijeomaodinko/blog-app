@@ -1,3 +1,35 @@
 <section>
-<h1>Here is the list of all the post</h1>
+<div>
+<img class="user-image" src="<%= @user.photo %>" alt="user photo">
+</div>
+<div>
+ <h2> <%= @user.name %> </h1>
+ <h3>Number of posts: <%= @user.posts_counter %></h3>
+ </div>
 </section>
+
+<section>
+<% @posts.each do |post| %>
+    <%= link_to user_post_path(@user.id, post.id) do %>
+   <div>
+   <h2>Post: <%= '#' %> <%= post.id %></h2>
+    <h3><%= post.title%></h3>
+    <p> <%= post.text%> </p>
+    </div>
+    <div>
+    <p>Comments: <%= post.comments_counter %>
+    <span>Likes: <%= post.likes_counter %></span></p>
+    </div>
+    <% end %>
+    <% end %>
+    </section>
+    
+    <section>
+    <% @post.each do |comment|%>
+       <div>
+        <p><%= comment.author_id %><%= ':' %><span>
+         <%= comment.text %><span></p> 
+        </div>
+    <% end %>
+    </section>
+    <button> Pagination </button>

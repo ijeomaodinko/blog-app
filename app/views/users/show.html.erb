@@ -1,1 +1,31 @@
-<h1>Here is the list of users by id</h1>
+<section>
+<div>
+<img class="user-image" src="<%= @user.photo %>" alt="user photo">
+</div>
+<div>
+ <h2><%= @user.name %></h1>
+ <h3>Number of posts: <%= @user.posts_counter %></h3>
+ </div>
+</section>
+
+<section>
+<div>
+ Bio: <%= @user.bio %>
+</div>
+</section>
+
+<section>
+<% @user.most_recent_post.each do |post|%>
+    <%= link_to user_post_path(@user.id, post.id) do %>
+    <div>
+   <h2>Post: <%= '#' %> <%= post.id %></h2>
+    <h3><%= post.title%></h3>
+    <p> <%= post.text%> </p>
+    <div>
+    <p>Comments: <%= post.comments_counter%>
+    <span>Likes: <%= post.likes_counter %></span></p>
+    </div>
+    </section>
+<% end %>
+<% end %>
+<button>See all Posts</button>
