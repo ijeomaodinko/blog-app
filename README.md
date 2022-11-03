@@ -2,12 +2,16 @@
 
 # Blog App 🌍
 
-This project - Blog app is built using ruby on rails. The Blog app is a classic example of a blog website. The project is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+This project - Blog App is built using ruby on rails. The Blog app is a classic example of a blog website. The project is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 
 ## Built With 🛠
 
-- Ruby on Rails
+- Major languages: Ruby
+- Frameworks: Ruby on Rails
+- Technologies used: Rubocop, gem, Postgresql
+- Code Editor: Visual Studio
+- Testing: Rspec
 
 ## Live Demo (if available)
 
@@ -43,14 +47,40 @@ Press ENTER to create your local clone. After creating it, you can open the page
 
     rails s 
 
+Open it by accessing http://localhost:3000/ on your browser.
+
+### To Run Test
+To install rspec in the terminal:
+
+    $ gem install rspec
+
+To run tests, run this command
+
+    $ rspec ./spec/#{filename}_spec.rb
+    
+
+### Create, Drop and, Reset a Database
+
+    rails db:create
+    rails db:drop
+    rails db:reset
+
+### Generate Schema
+
+    rails db:migrate
+
+### Generate Controller
+
+    rails generate controller NAME [action action] [options]
+    
 
 ## Author 🖊📖
 
 👤 **Ijeoma Odinko**
 
-- GitHub: [@githubhandle](https://github.com/ijeomaodinko)
-- Twitter: [@twitterhandle](https://twitter.com/iodinko)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/ijeomaodinko)
+- GitHub: [@ijeomaodinko](https://github.com/ijeomaodinko)
+- Twitter: [@iodinko](https://twitter.com/iodinko)
+- LinkedIn: [ijeomaodinko](https://linkedin.com/in/ijeomaodinko)
 
 
 

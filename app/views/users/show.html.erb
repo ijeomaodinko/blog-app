@@ -22,7 +22,7 @@
     <h3><%= post.title%></h3>
     <p> <%= post.text%> </p>
     <div>
-    <p>Comments: <%= post.comments_counter%>
+    <p>Comments: <%= post.comments_counter  || 2 %> <%= '  ' %>
     <span class="like-info">Likes: <%= post.likes_counter %></span></p>
     </div>
     </section>
