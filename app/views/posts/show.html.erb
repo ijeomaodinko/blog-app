@@ -1,8 +1,8 @@
-<div class="post-info">
+<section class="post-info">
     <div class="post-user-info">
-      <p>Post : <%= @post.title %> by <%= @post.author.name %></p>
-      <p>Comments: <%= @post.comments_counter %> 
-      <span> Likes: <%= @post.likes_counter %></span></p>
+      <p>Post <%= '#' %><%= @post.id %><%= ' ' %><%= @post.title %> by <%= @post.author.name %></p>
+      <p>Comments: <%= @post.comments_counter || 0 %> 
+      <span> Likes: <%= @post.likes_counter || 0 %></span></p>
     </div>
     <p><%= @post.text %></p>
     <div class="comments">
@@ -10,4 +10,4 @@
             <p><%= comment.author.name %> : <%= comment.text %> </p>
         <% end %>
     </div>
-  </div>
+</section>

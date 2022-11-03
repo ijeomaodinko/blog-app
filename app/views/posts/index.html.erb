@@ -9,23 +9,23 @@
 </section>
 
 <section  class="post-info">
-<% @posts.each do |post| %>
+  <% @posts.each do |post| %>
     <%= link_to user_post_path(@user, post) do %>
    <div class="post">
    <h2>Post: <%= '#' %> <%= post.id %></h2>
     <h3><%= post.title%></h3>
-    <p> <%= post.text%> </p>
+    <p>Comments: <%= post.comments_counter || 0 %>
+    <span class="span-like">Likes: <%= post.likes_counter  || 0 %></span></p>
     </div>
-    <div class=comment>
-    <p>Comments: <%= post.comments_counter %>
-    <span class="span-like">Likes: <%= post.likes_counter %></span></p>
+    <div class="post-text">
+    <p><%= post.text%> </p>
     </div>
     <% end %>
     <% end %>
-    </section>
+</section>
     
     <section class="comment-info">
-    <% @post.each do |comment|%>
+    <% @posts.each do |comment|%>
        <div  class="comment">
         <p><%= comment.author_id %><%= ':' %><span>
          <%= comment.text %><span></p> 
