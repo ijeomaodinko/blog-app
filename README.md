@@ -33,7 +33,7 @@ If you are using a SSH key.
     "git clone https://github.com/ijeomaodinko/blog-app.git
 
 
-Press ENTER to create your local clone. After creating it, you can open the page by opening with Visual Studio Code. 
+Press ENTER to create your local clone. After creating it, you can open the app through the open folder in Vscode or typing     cd blog-app     on the terminal 
 
 
 ### Prerequisites
