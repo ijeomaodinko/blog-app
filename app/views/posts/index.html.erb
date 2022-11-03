@@ -14,7 +14,7 @@
    <div class="post">
    <h2>Post: <%= '#' %> <%= post.id %></h2>
     <h3><%= post.title%></h3>
-    <p>Comments: <%= post.comments_counter || 0 %>
+    <p>Comments: <%= post.comments_counter || 1 %>
     <span class="span-like">Likes: <%= post.likes_counter  || 0 %></span></p>
     </div>
     <div class="post-text">
@@ -27,7 +27,7 @@
     <section class="comment-info">
     <% @posts.each do |comment|%>
        <div  class="comment">
-        <p><%= comment.author_id %><%= ':' %><span>
+        <p><%= comment.author.name %><%= ':' %><span>
          <%= comment.text %><span></p> 
         </div>
     <% end %>
