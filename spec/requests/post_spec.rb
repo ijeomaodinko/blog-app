@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
     before(:all) do
-      @address =  get '/post/index' 
+      @address = get '/post/index'
     end
 
     it 'returns http success' do
