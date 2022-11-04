@@ -5,9 +5,12 @@
       <span> Likes: <%= @post.likes_counter || 0 %></span></p>
     </div>
     <p><%= @post.text %></p>
-    <div class="comments">
-         <% @post.recent_comments.each do |comment| %>
-            <p><%= comment.author.name %> : <%= comment.text %> </p>
-        <% end %>
-    </div>
+    <section class="comment-info">
+    <% @comments.each do |comment|%>
+       <div  class="comment">
+        <p><%= comment.author.name %><%= ':' %><span>
+         <%= comment.text %><span></p> 
+        </div>
+      <% end %>
+    </section>
 </section>

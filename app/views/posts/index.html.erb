@@ -21,15 +21,15 @@
     <p><%= post.text%> </p>
     </div>
     <% end %>
-    <% end %>
-</section>
-    
     <section class="comment-info">
-    <% @posts.each do |comment|%>
-       <div  class="comment">
+          <div  class="comment">
+          <% post.recent_comments.each do |comment| %>
         <p><%= comment.author.name %><%= ':' %><span>
          <%= comment.text %><span></p> 
         </div>
+        <% end %>
+       </section>
     <% end %>
-    </section>
+</section>
+    
     <button type="submit"> Pagination </button>
