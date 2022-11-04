@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   def new
     @current_user = current_user
     @post = Post.new
-    @post = Post.all
   end
 
   def create
