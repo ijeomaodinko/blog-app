@@ -1,0 +1,11 @@
+<section class="user-info">
+  <%= link_to user_path(user.id) do %>
+<div class="user">
+<img class="user-image" src="<%= user.photo %>" alt="user photo">
+</div>
+<div class="info">
+ <h2><%= user.name %></h1>
+ <h3>Number of posts: <%= user.posts_counter || 2 %></h3>
+ </div>
+ <% end %>
+</section>

@@ -15,7 +15,7 @@ RSpec.describe 'Posts', type: :request do
       expect(@address).to eq(200)
     end
     it 'should render the actual template' do
-      expect(get('/post/index')).to render_template('post/index')
+      expect(get('/post/index')).to render_template('index')
     end
 
     it 'Response body should return correct placeholder text' do
@@ -32,7 +32,7 @@ RSpec.describe 'Posts', type: :request do
       expect(@address).to eq(200)
     end
     it 'should render the actual template' do
-      expect(get('/post/show')).to render_template('post/show')
+      expect(get('/post/show')).to render_template('show')
     end
     it 'returns http success' do
       get '/post/show'
