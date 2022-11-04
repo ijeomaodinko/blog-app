@@ -4,7 +4,6 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  
   def new
     @current_user = current_user
     @post = Post.new
@@ -17,8 +16,7 @@ class PostsController < ApplicationController
     @post.comments_counter = 0
     @post.likes_counter = 0
     @user = current_user
-   
-    
+
     if @post.save
       redirect_to posts_new_path(current_user)
       flash[:error] = 'Post successfuly created!'
@@ -27,12 +25,12 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def show
     @post = Post.find(params[:id])
     @user = User.find(params[:user_id])
   end
-  
+
   private
 
   def post_params
