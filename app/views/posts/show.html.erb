@@ -5,8 +5,13 @@
       <span> Likes: <%= @post.likes_counter || 0 %></span></p>
     </div>
     <p><%= @post.text %></p>
+
+    <%= render 'comments/comment' %>
+
+    <%= render 'likes/likes' %>
+    
     <section class="comment-info">
-    <% @comments.each do |comment|%>
+    <% @post.comments.each do |comment|%>
        <div  class="comment">
         <p><%= comment.author.name %><%= ':' %><span>
          <%= comment.text %><span></p> 

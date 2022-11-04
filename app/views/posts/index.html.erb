@@ -21,6 +21,8 @@
     <p><%= post.text%> </p>
     </div>
     <% end %>
+    
+
     <section class="comment-info">
           <div  class="comment">
           <% post.recent_comments.each do |comment| %>
@@ -33,3 +35,4 @@
 </section>
     
     <button type="submit"> Pagination </button>
+

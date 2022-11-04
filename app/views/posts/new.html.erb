@@ -1,0 +1,21 @@
+<h1>Add a Post </h1>
+
+    <%= form_with model: @post, url:  posts_new_path,  method: :post, local: true do |form| %>
+
+        <div class="p-title" >
+            <%= form.label :title %>
+            <br>
+            <%= form.text_field :title %>
+        </div>
+
+        <div class="p-text" >
+            <%= form.label :text %>
+            <br>
+            <%= form.text_area :text %>
+        </div>
+        
+        <div class="p-submit" >
+            <%= form.submit "Add Post" %>
+        </div>
+  
+    <% end %>
