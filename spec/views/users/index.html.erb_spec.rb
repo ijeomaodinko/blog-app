@@ -13,6 +13,20 @@ RSpec.describe 'users/index.html.erb', type: :feature do
     expect(page).to have_content (@user6.name)
     expect(page).to have_content (@user5.name)
   end
- 
+  it 'I can see the profile picture for each user' do
+    expect(page).to have_selector('img', count: 5)
+  end
+  it 'I can see the number of posts each user has written' do
+    expect(page).to have_content('2')
+    expect(page).to have_content('1')
+  end
+  it "When I click on a user, I am redirected to that user's show page" do
+    click_on 'Tom'
+    expect(page).to have_current_path('/users/6')
+  end
+  it 'shows the right content' do
+    visit('/users')
+    expect(page).to have_content('Tom')
+  end
   end
 end
