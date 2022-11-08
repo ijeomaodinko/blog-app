@@ -9,5 +9,10 @@ RSpec.describe 'users/index.html.erb', type: :feature do
       bio: 'Teacher from Mexico')
     visit '/users'
     end
-  
+  it 'I can see the username of all other users' do
+    expect(page).to have_content (@user6.name)
+    expect(page).to have_content (@user5.name)
+  end
+ 
+  end
 end
