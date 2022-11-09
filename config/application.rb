@@ -20,5 +20,6 @@ module Blog
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.autoloader = :classic
+    config.assets.initialize_on_precompile = false
   end
 end
