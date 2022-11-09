@@ -1,41 +1,55 @@
 require 'rails_helper'
 
-RSpec.describe 'posts/show.html.erb', type: :feature do
-    before(:each) do
-      @user1 = User.create(name: 'Moon', photo: 'https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=400',
-       bio: 'FullStack Developer from Porland.', posts_counter: 2)
-     
-      @post1 = Post.create(
-        author_id: @user1.id, 
-        title: 'Greating', 
-        text: 'Hello everyone is awesome day for all', 
-        comments_counter: 1, 
-        likes_counter: 0
-      )
+RSpec.describe 'users/show.html.erb', type: :feature do
+  before(:each) do
+  @user1 = User.create(name: 'Theresa', photo: 'https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&w=400',
+  bio: 'FullStack Developer from Nigeria.', posts_counter: 2)
+  @post1 = Post.create(
+    author_id: @user1.id, 
+    title: 'Greating', 
+    text: 'Hello everyone is awesome day for all', 
+    comments_counter: 3, 
+    likes_counter: 0
+  )
+  @post2 = Post.create(
+    author_id: @user1.id, 
+    title: 'Building on ruby', 
+    text: 'This is a all about ruby on rails', 
+    comments_counter: 0, 
+    likes_counter: 0
+  )
 
-      (0..1).each do |id|
-      @comment = Comment.create(
-        post_id: @post1.id, 
-        author_id: @user1.id, 
-        text: 'Hi, Excellence' )
-      end
+visit user_path(@user1)
 
-      visit  user_posts_path(@user1)
 end
 
-  it 'should show post title' do
-    expect(page).to have_content('Greating')
-  end
-  # it 'should show the author of the post' do
-  #   expect(page).to have_content('Deen')
-  # end
-  # it 'should show comment count' do
-  #   expect(page).to have_content(@post1.comments_counter)
-  # end
-  # it 'should show likes count' do
-  #   expect(page).to have_content(@post1.likes_counter)
-  # end
-  # it 'should show commentor name' do
-  #   expect(page).to have_content('Deen')
-  # end
+it 'It should show user photo' do
+  expect(page.find('img')['src']).to have_content('https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&w=400')
+end
+
+it 'It should show user name' do
+  expect(page).to have_content(@user1.name)
+end
+
+it 'It should show user name' do
+  expect(page).to have_content(@user1.bio)
+end
+
+it 'It should show posts count' do
+  expect(page).to have_content('Number of posts: 2')
+end
+
+it 'It should show last two posts' do
+  expect(page).to have_content(@post1.id)
+  expect(page).to have_content(@post2.id)
+end
+
+it 'It should show last three posts' do
+  expect(page).to have_link('See all Post')
+end
+
+it 'when user post is clicked it should redirect to posts show' do
+  click_link 'Building on ruby'
+  expect(page).to have_current_path(user_post_path(@user1, @post2))
+end
 end
