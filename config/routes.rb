@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users 
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   get 'likes/likes'
   get 'comments/comments'
   get 'posts/index'
