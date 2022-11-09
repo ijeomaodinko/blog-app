@@ -1,18 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'posts/index.html.erb', type: :feature do
-  describe 'index' do 
+  describe 'index' do
     before(:example) do
       @user1 = User.create(name: 'Moon', photo: 'https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=400',
-       bio: 'FullStack Developer from Porland.')
-     
-      @post1 = Post.create(author_id: @user1.id, title: 'Greating', text: 'Hello everyone is awesome day for all', comments_counter: 1, likes_counter: 0)
+                           bio: 'FullStack Developer from Porland.')
 
-      @comment = Comment.create(post_id: @post1.id, author_id: @user1.id, text: 'Hi, Excellence' )
- 
-      @like1 = Like.create(user_id: 1, post_id: 1 )
+      @post1 = Post.create(author_id: @user1.id, title: 'Greating', text: 'Hello everyone is awesome day for all',
+                           comments_counter: 1, likes_counter: 0)
 
-      visit  user_posts_path(@user1)
+      @comment = Comment.create(post_id: @post1.id, author_id: @user1.id, text: 'Hi, Excellence')
+
+      @like1 = Like.create(user_id: 1, post_id: 1)
+
+      visit user_posts_path(@user1)
     end
 
     # it 'should show user profile' do
@@ -51,5 +52,5 @@ RSpec.describe 'posts/index.html.erb', type: :feature do
     it 'has a pagination button' do
       expect(page).to have_content('Pagination')
     end
-  end 
+  end
 end
