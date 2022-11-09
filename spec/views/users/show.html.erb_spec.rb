@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'posts/show.html.erb', type: :feature do
+RSpec.describe 'users/show.html.erb', type: :feature do
     before(:each) do
       @user1 = User.create(name: 'Moon', photo: 'https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=400',
        bio: 'FullStack Developer from Porland.', posts_counter: 2)
