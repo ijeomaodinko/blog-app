@@ -82,13 +82,6 @@ To run tests, run this command
 - Twitter: [@iodinko](https://twitter.com/iodinko)
 - LinkedIn: [ijeomaodinko](https://linkedin.com/in/ijeomaodinko)
 
-## Author 2
-
-**Ntihinduka Alpha**
-
-- GitHub: [githubhandle](https://github.com/AlphaNtihinduka)
-- Twitter: [twitterhandle](https://twitter.com/@alphantihinduka)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ntihinduka-alpha-81bb7b22a/)
 
 
 ## 🤝 Contributing
