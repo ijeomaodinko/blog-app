@@ -8,7 +8,11 @@
 <section class="user-info">
 
 <div class="image-info">
-
+<% if @user.photo.nil? %>
+<%= image_tag "https://images.pexels.com/photos/39317/chihuahua-dog-puppy-cute-39317.jpeg?auto=compress&cs=tinysrgb&w=400", class:"user_image"%>
+<% else %>
+    <%= image_tag @user.photo, class:"user_image" %>
+    <% end %>
 </div>
 <div class="info">
  <h2> <%= @user.name %> </h2>
@@ -29,6 +33,11 @@
     <p><%= post.text%> </p>
     </div>
     <% end %>
+    <% if can? :destroy, post %>
+    <%= form_with model: post, url: user_post_path(@user, post), method: :delete do |form| %>
+      <%= form.submit "Delete Post", class: "delete-button" %>
+    <% end %>
+  <% end %>
     
 
     <section class="comment-info">

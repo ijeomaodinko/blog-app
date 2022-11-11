@@ -9,6 +9,12 @@
     <%= render 'comments/comment' %>
 
     <%= render 'likes/likes' %>
+
+    <% if can? :destroy, @post %>
+            <%= form_with model: @post, url: user_post_path(@user, @post), method: :delete do |form| %>
+              <%= form.submit "Delete Post", class: "delete-button" %>
+            <% end %>
+          <% end %>
     
     <section class="comment-info">
     <% @post.comments.each do |comment|%>
