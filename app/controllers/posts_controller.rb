@@ -32,6 +32,15 @@ class PostsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     render file: 'public/404.html', status: :not_found
   end
+  
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    respond_to do |format|
+      format.html { redirect_to user_path(current_user), notice: 'Deleted!' }
+    end
+  end
 
   private
 
