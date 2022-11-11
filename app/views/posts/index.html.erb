@@ -42,7 +42,7 @@
 
     <section class="comment-info">
           <div  class="comment">
-          <% post.recent_comments.each do |comment| %>
+          <% post.recent_five_comments.each do |comment| %>
         <p><%= comment.author.name %><%= ':' %><span>
          <%= comment.text %><span></p> 
         </div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'likes/likes'
   get 'comments/comments'
   get 'posts/index'

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.where(author_id: @user.id).includes(:comments)
+    @posts = Post.all
     @user = User.find(params[:user_id])
   end
 
