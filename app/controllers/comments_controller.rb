@@ -2,11 +2,11 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
   def create
     @comment = Comment.new(comment_params)
-    @comment.author_id = params[:author_id]
+    @comment.author_id = params[:user_id]
     @comment.post_id = params[:post_id]
 
     if @comment.save
-      redirect_to user_comments_path(@comment.author_id, @comment.post_id)
+      redirect_to user_post_path(@comment.author_id, @comment.post_id)
     else
       flash[:error] = 'Error in saving comment'
       render :new
