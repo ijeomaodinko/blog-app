@@ -62,7 +62,7 @@ gem 'rswag-api'
 gem 'rswag-ui'
 
 group :development, :test do
-  gem 'rspec-rails'
+  # gem 'rspec-rails'
   gem 'rswag-specs'
 end
 
