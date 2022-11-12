@@ -8,8 +8,8 @@ This project - Blog App is built using ruby on rails. The Blog app is a classic 
 ## Built With 🛠
 
 - Major languages: Ruby
-- Frameworks: Ruby on Rails
-- Technologies used: Rubocop, gem, Postgresql
+- Frameworks: Ruby on Rails, Capyprama
+- Technologies used: Rubocop, Gem, Postgresql
 - Code Editor: Visual Studio
 - Testing: Rspec
 
@@ -33,7 +33,7 @@ If you are using a SSH key.
     "git clone https://github.com/ijeomaodinko/blog-app.git
 
 
-Press ENTER to create your local clone. After creating it, you can open the app through the open folder in Vscode or typing     cd blog-app     on the terminal 
+Press ENTER to create your local clone. After creating it, you can open the app through the open folder in Vscode or typing   `cd blog-app`    on the terminal 
 
 
 ### Prerequisites
@@ -74,13 +74,23 @@ To run tests, run this command
     rails generate controller NAME [action action] [options]
     
 
-## Author 🖊📖
+## Author 1 🖊📖
 
 👤 **Ijeoma Odinko**
 
 - GitHub: [@ijeomaodinko](https://github.com/ijeomaodinko)
 - Twitter: [@iodinko](https://twitter.com/iodinko)
 - LinkedIn: [ijeomaodinko](https://linkedin.com/in/ijeomaodinko)
+
+
+
+## Author 2 🖊📖
+
+👤 **Ntihinduka Alpha**
+
+GitHub: githubhandle
+Twitter: twitterhandle
+LinkedIn: LinkedIn
 
 
 

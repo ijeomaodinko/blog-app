@@ -8,7 +8,7 @@ class LikesController < ApplicationController
 
     if @like.save
       flash[:success] = 'Liked'
-      redirect_to user_post_path(@user, @post)
+      redirect_to user_posts_path(@user, @post)
     else
       flash[:error] = 'Something went wrong'
       render :new
