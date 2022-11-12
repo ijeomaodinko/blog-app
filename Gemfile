@@ -55,6 +55,16 @@ gem 'rails-controller-testing'
 # gem "image_processing", "~> 1.2"
 gem 'bcrypt', '~> 3.1', '>= 3.1.18'
 gem 'jwt', '~> 1.5', '>= 1.5.4'
+gem 'rswag'
+
+# Gemfile
+gem 'rswag-api'
+gem 'rswag-ui'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rswag-specs'
+end
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
