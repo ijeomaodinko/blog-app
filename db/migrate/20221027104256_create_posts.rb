@@ -10,5 +10,3 @@ class CreatePosts < ActiveRecord::Migration[7.0]
     end
   end
 end
-
-first_post = Post.create(author_id: 1, title: 'Hello', text: 'This is my first post')

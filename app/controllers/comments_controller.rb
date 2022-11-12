@@ -1,21 +1,23 @@
 class CommentsController < ApplicationController
-  def new
-    @comment = Comment.new
-    @user = current_user
-  end
-
+  load_and_authorize_resource
   def create
-    @user = Post.find(params[:user_id])
-    @post = Post.find(params[:user_id])
     @comment = Comment.new(comment_params)
-    @comment.author_id = current_user
-    @comment.post_id = params[:post_id]
+    @author = @comment.author
+    @post = @comment.post
 
-    if comments.save
-      redirect_to user_post_path(params[:author_id], params[:post_id])
+    if @comment.save
+      redirect_to user_posts_path(@author, @post)
     else
       flash[:error] = 'Error in saving comment'
-      render :new
+      render 'posts/new'
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id]).destroy
+
+    respond_to do |format|
+      format.html { redirect_to user_posts_path(current_user), notice: 'Comment deleted!' }
     end
   end
 
